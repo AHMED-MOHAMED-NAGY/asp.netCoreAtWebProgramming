@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h3>Ogrenci ekleme form</h3>
+
+<form action="..\Ogrenci\ogrKaydetClassViewAll" method="post">
+    <table>
+        <tr>
+            <td>Ogrenci Adi </td>
+            <td> : </td>
+            <td> <input type="text" name="ogrAdi" /></td>
+        </tr>
+        <tr>
+            <td>Ogrenci Soyadi</td>
+            <td> : </td>
+            <td> <input type="text" name="ogrSoyad" </td>
+        </tr>
+        <tr>
+            <td>Ogrenci No</td>
+            <td> : </td>
+            <td><input type="text" name="ogrNo" /></td>
+        </tr>
+        @* <tr colmspan> *@
+        <tr>
+            <input type="submit" />
+        </tr>
+    </table>
+
+</form>
