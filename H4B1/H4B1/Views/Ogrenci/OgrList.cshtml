@@ -1,0 +1,19 @@
+﻿@model List<Ogrenci>
+
+
+<div><@TempData["msl"]/div>
+<table class="table table-striped">
+    <tr>
+        <th>Ogrenci Ad</th>
+        <th>Ogrenci soyad</th>
+        <th>Ogrenci No</th>
+    </tr>
+    @foreach (var ogr in Model)
+    {
+        <tr>
+            <td>@ogr.ogrAdi</td>
+            <td>@ogr.ogrSoyad</td>
+            <td>@ogr.ogrNo</td>
+        </tr>   
+    }
+</table>
