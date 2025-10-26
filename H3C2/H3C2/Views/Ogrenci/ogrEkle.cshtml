@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    int i = 10;
+    int h = DateTime.Now.Hour;
+    int m = DateTime.Now.Minute;
+    string[] ogrenciler = { "Ayse", "Burhan", "Omer", "Hasan" };
+    int year = DateTime.Now.Year;
+    string TmpDataAd = TempData["Ad"].ToString();
+    int ViewDataNo = (int)ViewData["no"];
+    string viewBagData = ViewBag.msj;
+}
+
+<h3>TempData = @TempData["Ad"]</h3>
+<h3>ViewData = @ViewData["no"]</h3>
+<h3>ViewBag = @ViewBag.msj</h3>
+<br />
+<br />
+
+<h3> Ogrenci Eklendi Ogrenci NO = @i </h3>
+<table width="300" height="50" border="1" class="table table-striped">
+    <tr>
+        <th>Hour</th>
+        <th>Minute</th>
+    </tr>
+    <tr>
+        <td>@h</td>
+        <td>@m</td>
+    </tr>
+
+</table>
+
+<br />
+
+@for (int x = 1; x < 6; x++)
+{
+    // @x <br/>
+    <h4> @x</h4>
+}
+
+<br />
+<br />
+
+<ul>
+    @for (int y = 1; y < 6; y++)
+    {
+        <li><h4>@y</h4></li>
+    }
+</ul>
+
+<br />
+
+<ol>
+    @foreach (var ogr in ogrenciler)
+    {
+        <li><h4>@ogr</h4></li>
+    }
+</ol>
+
+
+<hr />
+<br />
+
+@if (year %4 == 0)
+{
+    <h4>artik yil</h4>
+}
+else
+{
+    <h4>artik yil degil</h4>
+}
