@@ -1,0 +1,50 @@
+﻿@model IEnumerable<H5B1.Models.Ogrenci>
+
+@{
+    ViewData["Title"] = "OgrList";
+}
+
+<h1>OgrList</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrSoyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrYas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrYas)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
