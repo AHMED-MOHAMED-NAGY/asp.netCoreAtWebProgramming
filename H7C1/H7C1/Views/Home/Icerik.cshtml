@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Icerik";
+    var sesUserData = Context.Session.GetString("SesUser");
+    var CookRenkData = Context.Request.Cookies["CookRenk"];
+}
+
+<h1>Icerik</h1>
+<h4> buraya sadace login olan girebilir</h4>
+<div> Session Datasi : @sesUserData</div>
+<div style="color: @CookRenkData"> Cookie Datasi : @CookRenkData</div>
+

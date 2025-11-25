@@ -18,15 +18,13 @@ namespace H5B1.Controllers
             return View();
         }
         public IActionResult OgrKaydet(Ogrenci ogr) {
-            if (ogr.OgrSoyad.Length > 50) { // i must add all thing ...
-                // hata
-            }
+            
             if (ModelState.IsValid) { //parametre olarak modelim tum kisitleri sagliyorsa true
                 // hata yok
-                // kaydet
+                // save to DB
                 ogrenciler.Add(ogr);
-                TempData["msj"] = ogr.OgrAd + " adli ogrenci eklendi";
-                return RedirectToAction("OgrList");
+                TempData["msj"] = ogr.OgrAd + " adli ogrenci eklendi"; // to print DONE msj
+                return RedirectToAction("OgrList"); // giris sayfasi 
             }
             TempData["hata"] = "lutfen tum ogrenci dogru yazi";
             return RedirectToAction("OgrHata");
@@ -35,6 +33,12 @@ namespace H5B1.Controllers
         {
             return View(ogrenciler);
         }
+
+        public IActionResult test() 
+        {
+            return View();
+        }
+
         public IActionResult OgrHata() {
             return View();
         }

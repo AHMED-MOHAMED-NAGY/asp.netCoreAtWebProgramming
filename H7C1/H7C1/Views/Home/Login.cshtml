@@ -1,0 +1,40 @@
+﻿@model H7C1.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h4>Login</h4>
+<hr />
+<div style="background-color: red;">
+    @TempData["msj"]
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="LoginKontrol">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="usrName" class="control-label"></label>
+                <input asp-for="usrName" class="form-control" />
+                <span asp-validation-for="usrName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="usrPassword" class="control-label"></label>
+                <input asp-for="usrPassword" class="form-control" />
+                <span asp-validation-for="usrPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
